@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connectToDatabase = require('../models/db');
 const logger = require('../logger');
-
+/*jshint esversion: 8 */
 router.get('/', async (req, res) => {
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
         const db = await connectToDatabase();
 
         // Task 2: use the collection() method to retrieve the gift collection
-        const collection = db.collection("gifts")
+        const collection = db.collection("gifts");
 
         const id = req.params.id;
 
